@@ -1,0 +1,89 @@
+{
+  "format": 1,
+  "restore": {
+    "/media/rafael/armazem do zé/projetos/desafio-proderj/desafio-proderj.csproj": {}
+  },
+  "projects": {
+    "/media/rafael/armazem do zé/projetos/desafio-proderj/desafio-proderj.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/media/rafael/armazem do zé/projetos/desafio-proderj/desafio-proderj.csproj",
+        "projectName": "desafio-proderj",
+        "projectPath": "/media/rafael/armazem do zé/projetos/desafio-proderj/desafio-proderj.csproj",
+        "packagesPath": "/home/rafael/.nuget/packages/",
+        "outputPath": "/media/rafael/armazem do zé/projetos/desafio-proderj/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/rafael/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.3, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.3, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[5.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[5.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "target": "Package",
+              "version": "[5.0.3, )"
+            },
+            "System.Globalization": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.200/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
