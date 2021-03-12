@@ -66,6 +66,14 @@ namespace desafio_proderj
                     pattern: "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
             });
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=News}/{action=Index}/{id?}");
+                endpoints.MapRazorPages();
+            });
         }
     }
 }

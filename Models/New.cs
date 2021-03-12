@@ -11,7 +11,7 @@ namespace desafio_proderj.Models
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int ID { get; set; }
 
-    [Required]
+    [Required(ErrorMessage = "Campo Obrigatório")]
     [StringLength(100)]
     public string Title { get; set; }
 

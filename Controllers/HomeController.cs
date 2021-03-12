@@ -23,7 +23,7 @@ namespace desafio_proderj.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult WhoWeAre()
         {
             return View();
         }

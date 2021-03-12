@@ -1,0 +1,58 @@
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+@model IEnumerable<desafio_proderj.Models.New>
+
+@{
+    ViewData["Title"] = "Notícias";
+}
+
+@if (SignInManager.IsSignedIn(User)) {
+    <div class="align-right">
+        <a asp-action="Create" class='btn btn-outline-secondary'>
+            Cadastrar Novo
+        </a>
+    </div>
+}
+
+<h3>Notícias</h3>
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                Título
+            </th>
+            <th />
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.ID" class='btn btn-primary btn-sm'>
+                        Detalhes
+                    </a>
+                    @if (SignInManager.IsSignedIn(User)) {
+                        <a asp-action="Edit" asp-route-id="@item.ID" class='btn btn-light btn-sm'>
+                            Editar
+                        </a>
+                        <a asp-action="Delete" asp-route-id="@item.ID" class='btn btn-danger btn-sm'>
+                            Excluir
+                        </a>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

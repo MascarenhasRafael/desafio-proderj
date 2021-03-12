@@ -1,0 +1,27 @@
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+@model desafio_proderj.Models.New
+
+@{
+    ViewData["Title"] = "Notícia";
+}
+
+<fieldset>
+    <legend>@Html.DisplayFor(model => model.Title)</legend>
+    <div class="align-right">
+        @if (SignInManager.IsSignedIn(User)) {
+            <a asp-action="Edit" asp-route-id="@Model.ID" class='btn btn-secondary'>
+                Editar
+            </a>
+        }
+        <a asp-action="Index" class='btn btn-light'>
+            Voltar
+        </a>
+    </div>
+
+    <div class="col-md-10">
+        @Html.DisplayFor(model => model.Content)
+    </div>
+</fieldset>
+

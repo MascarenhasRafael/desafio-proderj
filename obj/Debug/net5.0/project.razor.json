@@ -15603,8 +15603,18 @@
   "RootNamespace": "desafio_proderj",
   "Documents": [
     {
+      "FilePath": "/media/rafael/armazem do zé/projetos/desafio-proderj/Views/News/Create.cshtml",
+      "TargetPath": "Views\\News\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/media/rafael/armazem do zé/projetos/desafio-proderj/Views/Shared/_ValidationScriptsPartial.cshtml",
       "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/media/rafael/armazem do zé/projetos/desafio-proderj/Views/News/Edit.cshtml",
+      "TargetPath": "Views\\News\\Edit.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15628,6 +15638,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/media/rafael/armazem do zé/projetos/desafio-proderj/Views/Home/WhoWeAre.cshtml",
+      "TargetPath": "Views\\Home\\WhoWeAre.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/media/rafael/armazem do zé/projetos/desafio-proderj/Views/Shared/_HeaderPartial.cshtml",
       "TargetPath": "Views\\Shared\\_HeaderPartial.cshtml",
       "FileKind": "mvc"
@@ -15643,13 +15658,23 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/media/rafael/armazem do zé/projetos/desafio-proderj/Views/Home/Privacy.cshtml",
-      "TargetPath": "Views\\Home\\Privacy.cshtml",
+      "FilePath": "/media/rafael/armazem do zé/projetos/desafio-proderj/Views/News/Delete.cshtml",
+      "TargetPath": "Views\\News\\Delete.cshtml",
       "FileKind": "mvc"
     },
     {
       "FilePath": "/media/rafael/armazem do zé/projetos/desafio-proderj/Views/_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/media/rafael/armazem do zé/projetos/desafio-proderj/Views/News/Index.cshtml",
+      "TargetPath": "Views\\News\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/media/rafael/armazem do zé/projetos/desafio-proderj/Views/News/Details.cshtml",
+      "TargetPath": "Views\\News\\Details.cshtml",
       "FileKind": "mvc"
     }
   ],

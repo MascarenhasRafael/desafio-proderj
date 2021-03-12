@@ -7,7 +7,7 @@ namespace desafio_proderj.Data.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "News",
+                name: "New",
                 columns: table => new
                 {
                     ID = table.Column<int>(nullable: false)
@@ -17,14 +17,14 @@ namespace desafio_proderj.Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_News", x => x.ID);
+                    table.PrimaryKey("PK_New", x => x.ID);
                 });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "News");
+                name: "New");
         }
     }
 }
