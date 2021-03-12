@@ -3,6 +3,7 @@
 /media/rafael/armazem do zé/projetos/desafio-proderj/bin/Debug/net5.0/publish/wwwroot/css/news.css
 /media/rafael/armazem do zé/projetos/desafio-proderj/bin/Debug/net5.0/publish/wwwroot/css/site.css
 /media/rafael/armazem do zé/projetos/desafio-proderj/bin/Debug/net5.0/publish/wwwroot/favicon.ico
+/media/rafael/armazem do zé/projetos/desafio-proderj/bin/Debug/net5.0/publish/wwwroot/image/logo-proderj.jpg
 /media/rafael/armazem do zé/projetos/desafio-proderj/bin/Debug/net5.0/publish/wwwroot/js/site.js
 /media/rafael/armazem do zé/projetos/desafio-proderj/bin/Debug/net5.0/publish/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css
 /media/rafael/armazem do zé/projetos/desafio-proderj/bin/Debug/net5.0/publish/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css.map
@@ -38,7 +39,6 @@
 /media/rafael/armazem do zé/projetos/desafio-proderj/bin/Debug/net5.0/publish/wwwroot/lib/jquery/dist/jquery.min.js
 /media/rafael/armazem do zé/projetos/desafio-proderj/bin/Debug/net5.0/publish/wwwroot/lib/jquery/dist/jquery.min.map
 /media/rafael/armazem do zé/projetos/desafio-proderj/bin/Debug/net5.0/publish/wwwroot/lib/jquery/LICENSE.txt
-/media/rafael/armazem do zé/projetos/desafio-proderj/bin/Debug/net5.0/publish/wwwroot/logo-proderj.jpg
 /media/rafael/armazem do zé/projetos/desafio-proderj/bin/Debug/net5.0/publish/appsettings.Development.json
 /media/rafael/armazem do zé/projetos/desafio-proderj/bin/Debug/net5.0/publish/appsettings.json
 /media/rafael/armazem do zé/projetos/desafio-proderj/bin/Debug/net5.0/publish/app.db
