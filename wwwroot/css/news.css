@@ -6,3 +6,27 @@
 textarea.form-control {
   height: 140px;
 }
+
+.news-image {
+  height: 400px;
+  margin: 20px 0;
+  display: block;
+}
+
+.card-title {
+  font-weight: bold;
+}
+
+.cards {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: end;
+	align-content: stretch;
+}
+
+.cards .card {
+  margin-left: 1%;
+  margin-bottom: 3%;
+}

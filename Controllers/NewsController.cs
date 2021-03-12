@@ -1,22 +1,27 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.IO;
+using System.Timers;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using desafio_proderj.Data;
 using desafio_proderj.Models;
+using Microsoft.AspNetCore.Hosting;
 
 namespace desafio_proderj.Controllers
 {
     public class NewsController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly IWebHostEnvironment _hostEnvironment;
 
-        public NewsController(ApplicationDbContext context)
+        public NewsController(ApplicationDbContext context, IWebHostEnvironment hostEnvironment)
         {
             _context = context;
+            this._hostEnvironment = hostEnvironment;
         }
 
         // GET: News
@@ -54,10 +59,28 @@ namespace desafio_proderj.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Title,Content")] New @new)
+        public async Task<IActionResult> Create([Bind("ID,Title,Content,ImageFile, ImageName")] New @new)
         {
             if (ModelState.IsValid)
             {
+                if (@new.ImageFile != null) {
+                    string assetsPath = _hostEnvironment.WebRootPath;
+                    string fileName = Path.GetFileNameWithoutExtension(@new.ImageFile.FileName);
+                    string extension = Path.GetExtension(@new.ImageFile.FileName);
+
+                    fileName = fileName + DateTime.Now.ToString("ddmmyyyyssfff") + extension;
+                    string imagePath = Path.Combine(assetsPath, "image", fileName);
+
+
+                    @new.ImageName = fileName;
+                    using (var fileStream = new FileStream(imagePath, FileMode.Create))
+                    {
+                        await @new.ImageFile.CopyToAsync(fileStream);
+                    }
+                }
+
+                @new.ImageName = @new.ImageName != null ? @new.ImageName : "";
+
                 _context.Add(@new);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -86,8 +109,9 @@ namespace desafio_proderj.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Title,Content")] New @new)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,Title,Content,ImageFile,ImageName")] New @new)
         {
+
             if (id != @new.ID)
             {
                 return NotFound();
@@ -97,6 +121,27 @@ namespace desafio_proderj.Controllers
             {
                 try
                 {
+                    if (@new.ImageFile != null) {
+
+                        string assetsPath = _hostEnvironment.WebRootPath;
+                        string fileName = Path.GetFileNameWithoutExtension(@new.ImageFile.FileName);
+                        string extension = Path.GetExtension(@new.ImageFile.FileName);
+
+                        fileName = fileName + DateTime.Now.ToString("ddmmyyyyssfff") + extension;
+                        string imagePath = Path.Combine(assetsPath, "image", fileName);
+
+                        if(@new.ImageName != null && System.IO.File.Exists(imagePath)) {
+                            string oldFilePath = Path.Combine(assetsPath, "image", @new.ImageName);
+                            System.IO.File.Delete(oldFilePath);
+                        }
+
+                        @new.ImageName = fileName;
+                        using (var fileStream = new FileStream(imagePath, FileMode.Create))
+                        {
+                            await @new.ImageFile.CopyToAsync(fileStream);
+                        }
+                    }
+
                     _context.Update(@new);
                     await _context.SaveChangesAsync();
                 }
@@ -140,6 +185,14 @@ namespace desafio_proderj.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var @new = await _context.New.FindAsync(id);
+
+            string assetsPath = _hostEnvironment.WebRootPath;
+            string imagePath = Path.Combine(assetsPath, "image", @new.ImageName);
+
+            if (System.IO.File.Exists(imagePath)) {
+                System.IO.File.Delete(imagePath);
+            }
+
             _context.New.Remove(@new);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));

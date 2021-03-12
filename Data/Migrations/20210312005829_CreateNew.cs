@@ -13,7 +13,8 @@ namespace desafio_proderj.Data.Migrations
                     ID = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Title = table.Column<string>(maxLength: 100, nullable: false),
-                    Content = table.Column<string>(maxLength: 500)
+                    Content = table.Column<string>(maxLength: 500),
+                    ImageName = table.Column<string>(maxLength: 150)
                 },
                 constraints: table =>
                 {
